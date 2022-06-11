@@ -1,0 +1,2 @@
+start with OS. we can now do eg. FileSystem. to get the File System if we wont to stuff with this we need to
+do eg. OpenDose() to open the dose or WriteAllText(String Path, String[] Content) 
