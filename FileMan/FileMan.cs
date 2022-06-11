@@ -13,6 +13,9 @@ namespace OS.FileMani
         string AbFilePath = Application.UserAppDataPath + @"\" + "BEsiA.Ab";
         string SetFilePath = Application.UserAppDataPath + @"\" + "settings.Set";
         string InfoFilePath = Application.UserAppDataPath + @"\" + "Info.txt";
+        string DataFilePath = Application.UserAppDataPath + @"\private\Password\data.txt";
+        string DataDir = Application.UserAppDataPath + @"\private\Password";
+        string CPUDocsFile = Application.UserAppDataPath + @"\CPUdocs.txt";
         public FileMan()
         {
             if (File.Exists(CodeFilePath) != true)
@@ -23,6 +26,12 @@ namespace OS.FileMani
                 File.Create(SetFilePath);
             if (File.Exists(InfoFilePath) != true)
                 File.Create(InfoFilePath);
+            if (Directory.Exists(DataDir) != true)
+                Directory.CreateDirectory(DataDir);
+            if (File.Exists(DataFilePath) != true)
+                File.Create(DataFilePath);
+            if (File.Exists(CPUDocsFile) == false)
+                File.Create(CPUDocsFile);
             Write();
         }
         string infoAbText = "Info about the progarm" +
@@ -36,6 +45,7 @@ namespace OS.FileMani
             "the CEO of BEsIa is BjornBEs and its him who has make this progarm " +
             "";
         string SettingsFileText = "TOS:false";
+        string CPUDocsFileText = "if-if, \n Get-using, \n Fun-void, \n Class-class,";
         void Write()
         {
             if (File.ReadAllText(AbFilePath) != AbFileText)
@@ -44,6 +54,8 @@ namespace OS.FileMani
                 File.WriteAllText(InfoFilePath, infoAbText);
             if (File.ReadAllText(SetFilePath) != SettingsFileText)
                 File.WriteAllText(SetFilePath, SettingsFileText);
+            if (File.ReadAllText(CPUDocsFile) != SettingsFileText)
+                File.WriteAllText(CPUDocsFile, CPUDocsFileText);
         }
         string Path;
         /// <summary>

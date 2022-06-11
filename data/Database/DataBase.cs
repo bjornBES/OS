@@ -1,12 +1,13 @@
 ﻿using System;
 using System.IO;
 using System.Xml.Linq;
+using System.Windows.Forms;
 
 namespace BEs.mathF.data
 {
     public class DataBase : Base
     {
-        static string path = "C:/Users/bjorn/Source/Repos/OS/data/data.txt";
+        static string path = Application.UserAppDataPath + @"\private\Password\data.txt";
         public static string[ ] LT = new string[100];
         public static string[ ] LTSet = new string[100];
         public static int LTSetI;

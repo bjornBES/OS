@@ -33,11 +33,11 @@ namespace OS
             TapPanel5.Hide();
             TapPanel2.Hide();
             TapName.Hide();
+            FileMan = new FileMan();
             DataBase.LoadData();
             Cal = new calculator.calculatorMan();
             compiler = new code.compilerCodeFill();
             CPUcompiler = new code.CPUcompilerCodeFill();
-            FileMan = new FileMan();
             PasswordMan = new PasswordMan();
             compiler.Start();
             CPUcompiler.Start();
