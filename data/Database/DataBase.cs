@@ -10,18 +10,6 @@ namespace BEs.mathF.data
         public static string[ ] LT = new string[100];
         public static string[ ] LTSet = new string[100];
         public static int LTSetI;
-        public static void LoadToFile()
-        {
-            string[ ] Text = new string[200];
-            for (int i = 0; i < DBaseName.Length; i++)
-            {
-                Text[i] = " Index:" + Index +
-                    ".Type:" + DBaseTypes[i].ToString() +
-                    ".Name:" + DBaseName[i] +
-                    ".Value:" + DBaseValues[i] + " ";
-            }
-            File.WriteAllLines(path, Text);
-        }
         public static void LoadData()
         {
             string name = "";
@@ -262,31 +250,10 @@ namespace BEs.mathF.data
             }
             return Id;
         }
-        public static void NewVal(string Name, Object Val)
+        public static void NewVal(string Name, Object Val, types type)
         {
-            for (int i = 0; i < DBaseName.Length; i++)
-            {
-                if(DBaseName[i]==Name)
-                {
-                    DBaseValues[i] = Val;
-                }
-            }
-            string[] Text = File.ReadAllText(path).Split(' ', ',', '.', ':');
-            string[ ] NewText = new string[1];
-            for (int i = 0; i < Text.Length; i++)
-            {
-                if(Text[i]=="Password")
-                {
-                    int III = i +2;
-                    NewText[0] = File.ReadAllText(path) + " Index:" + Index +
-                    ".Type:" + types.String +
-                    ".Name:" + "Password" +
-                    ".Value:" + Val + " ";
-                }
-            }
-            File.WriteAllText(path, "");
-            File.WriteAllLines(path, NewText);
-            //LoadToFile();
+            DeleteN(Name);
+            Set(Name, Val, type, true);
         }
     }
 }

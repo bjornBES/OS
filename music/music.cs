@@ -1,5 +1,4 @@
-﻿using AudioSwitcher.AudioApi.CoreAudio;
-using System.Media;
+﻿using System.Media;
 using System.Windows.Forms;
 
 namespace OS.music
