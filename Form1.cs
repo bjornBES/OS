@@ -21,6 +21,7 @@ namespace OS
             InitializeComponent();
             #region Start op
             UpdateOS.Start();
+            TapPanel8.Hide();
             TapPanel6.Hide();
             TapPanel7.Hide();
             lockOn.Hide();
@@ -145,6 +146,7 @@ namespace OS
             TapPanel5.Hide();
             TapPanel6.Hide();
             TapPanel7.Hide();
+            TapPanel8.Hide();
             TapName.Text = "Coding";
         }
         private void Tap2_Click(object sender, EventArgs e)
@@ -156,6 +158,7 @@ namespace OS
             TapPanel5.Hide();
             TapPanel6.Hide();
             TapPanel7.Hide();
+            TapPanel8.Hide();
             TapName.Text = "CPU code";
         }
         private void Tap3_Click(object sender, EventArgs e)
@@ -167,6 +170,7 @@ namespace OS
             TapPanel5.Hide();
             TapPanel6.Hide();
             TapPanel7.Hide();
+            TapPanel8.Hide();
             TapName.Text = "CPU commit";
         }
         private void Tap4_Click(object sender, EventArgs e)
@@ -178,6 +182,7 @@ namespace OS
             TapPanel5.Hide();
             TapPanel6.Hide();
             TapPanel7.Hide();
+            TapPanel8.Hide();
             TapName.Text = "File";
         }
         private void Tap5_Click(object sender, EventArgs e)
@@ -189,6 +194,7 @@ namespace OS
             TapPanel5.Show();
             TapPanel6.Hide();
             TapPanel7.Hide();
+            TapPanel8.Hide();
             TapName.Text = "Music Player";
         }
         private void Tap6_Click(object sender, EventArgs e)
@@ -200,6 +206,7 @@ namespace OS
             TapPanel5.Hide();
             TapPanel6.Show();
             TapPanel7.Hide();
+            TapPanel8.Hide();
             TapName.Text = "Clock";
         }
         private void tap7_Click(object sender, EventArgs e)
@@ -211,7 +218,20 @@ namespace OS
             TapPanel5.Hide();
             TapPanel6.Hide();
             TapPanel7.Show();
+            TapPanel8.Hide();
             TapName.Text = "cal";
+        }
+        private void tap8_Click(object sender, EventArgs e)
+        {
+            Tap1TablePanel.Hide();
+            TapPanel2.Hide();
+            CPUTable.Hide();
+            Table4Tap.Hide();
+            TapPanel5.Hide();
+            TapPanel6.Hide();
+            TapPanel7.Hide();
+            TapPanel8.Show();
+            TapName.Text = "Console";
         }
         #endregion
         #region Compilers

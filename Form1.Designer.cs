@@ -38,11 +38,15 @@ namespace OS
             this.ButtonTap3 = new System.Windows.Forms.Button();
             this.ButtonTap4 = new System.Windows.Forms.Button();
             this.TapsPanel = new System.Windows.Forms.Panel();
+            this.tap8 = new System.Windows.Forms.Button();
             this.LockOff = new System.Windows.Forms.Button();
             this.tap7 = new System.Windows.Forms.Button();
             this.Tap6 = new System.Windows.Forms.Button();
             this.ButtonTap5 = new System.Windows.Forms.Button();
             this.ExitButton = new System.Windows.Forms.Button();
+            this.TapPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.Console = new System.Windows.Forms.TextBox();
+            this.UnderTap8 = new System.Windows.Forms.TableLayoutPanel();
             this.Tap1TablePanel = new System.Windows.Forms.TableLayoutPanel();
             this.code = new System.Windows.Forms.TextBox();
             this.TableUnderCode = new System.Windows.Forms.TableLayoutPanel();
@@ -71,10 +75,6 @@ namespace OS
             this.RunCPUCode = new System.Windows.Forms.Button();
             this.CPUCode = new System.Windows.Forms.TextBox();
             this.CodeCPUdose = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.TapPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.MusicList = new System.Windows.Forms.TextBox();
             this.UnderTap5 = new System.Windows.Forms.TableLayoutPanel();
@@ -83,13 +83,10 @@ namespace OS
             this.Stop = new System.Windows.Forms.Button();
             this.LoopMusic = new System.Windows.Forms.CheckBox();
             this.FilePath = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.TapPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.TapPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.TapsPanel.SuspendLayout();
+            this.TapPanel8.SuspendLayout();
             this.Tap1TablePanel.SuspendLayout();
             this.TableUnderCode.SuspendLayout();
             this.CPUTable.SuspendLayout();
@@ -99,12 +96,8 @@ namespace OS
             this.FileOPt.SuspendLayout();
             this.TapPanel2.SuspendLayout();
             this.UnderTapPanel2.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
             this.TapPanel5.SuspendLayout();
             this.UnderTap5.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
-            this.tableLayoutPanel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // progressBar1
@@ -138,10 +131,10 @@ namespace OS
             this.Password.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Password.Location = new System.Drawing.Point(300, 15);
+            this.Password.Location = new System.Drawing.Point(281, 14);
             this.Password.Name = "Password";
             this.Password.PlaceholderText = "Password";
-            this.Password.Size = new System.Drawing.Size(200, 31);
+            this.Password.Size = new System.Drawing.Size(256, 31);
             this.Password.TabIndex = 2;
             this.Password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -193,6 +186,7 @@ namespace OS
             // 
             this.TapsPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.TapsPanel.Controls.Add(this.tap8);
             this.TapsPanel.Controls.Add(this.LockOff);
             this.TapsPanel.Controls.Add(this.tap7);
             this.TapsPanel.Controls.Add(this.Tap6);
@@ -206,6 +200,17 @@ namespace OS
             this.TapsPanel.Name = "TapsPanel";
             this.TapsPanel.Size = new System.Drawing.Size(88, 366);
             this.TapsPanel.TabIndex = 7;
+            // 
+            // tap8
+            // 
+            this.tap8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tap8.Location = new System.Drawing.Point(45, 120);
+            this.tap8.Name = "tap8";
+            this.tap8.Size = new System.Drawing.Size(40, 34);
+            this.tap8.TabIndex = 12;
+            this.tap8.UseVisualStyleBackColor = true;
+            this.tap8.Click += new System.EventHandler(this.tap8_Click);
             // 
             // LockOff
             // 
@@ -265,6 +270,44 @@ namespace OS
             this.ExitButton.Text = "exit";
             this.ExitButton.UseVisualStyleBackColor = false;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
+            // 
+            // TapPanel8
+            // 
+            this.TapPanel8.ColumnCount = 2;
+            this.TapPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.TapPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.TapPanel8.Controls.Add(this.Console, 0, 0);
+            this.TapPanel8.Controls.Add(this.UnderTap8, 0, 1);
+            this.TapPanel8.Location = new System.Drawing.Point(108, 51);
+            this.TapPanel8.Name = "TapPanel8";
+            this.TapPanel8.RowCount = 2;
+            this.TapPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.TapPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.TapPanel8.Size = new System.Drawing.Size(687, 327);
+            this.TapPanel8.TabIndex = 23;
+            // 
+            // Console
+            // 
+            this.Console.Location = new System.Drawing.Point(3, 3);
+            this.Console.Multiline = true;
+            this.Console.Name = "Console";
+            this.Console.ReadOnly = true;
+            this.Console.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.Console.Size = new System.Drawing.Size(337, 157);
+            this.Console.TabIndex = 0;
+            // 
+            // UnderTap8
+            // 
+            this.UnderTap8.ColumnCount = 2;
+            this.UnderTap8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.UnderTap8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.UnderTap8.Location = new System.Drawing.Point(3, 166);
+            this.UnderTap8.Name = "UnderTap8";
+            this.UnderTap8.RowCount = 2;
+            this.UnderTap8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.UnderTap8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.UnderTap8.Size = new System.Drawing.Size(337, 158);
+            this.UnderTap8.TabIndex = 1;
             // 
             // Tap1TablePanel
             // 
@@ -671,65 +714,6 @@ namespace OS
             this.CodeCPUdose.Size = new System.Drawing.Size(339, 157);
             this.CodeCPUdose.TabIndex = 4;
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(200, 100);
-            this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel2.ColumnCount = 3;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.Controls.Add(this.button1, 2, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 23);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(94, 74);
-            this.tableLayoutPanel2.TabIndex = 2;
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(65, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(26, 31);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Run";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(3, 3);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox1.Size = new System.Drawing.Size(94, 157);
-            this.textBox1.TabIndex = 3;
-            // 
             // TapPanel5
             // 
             this.TapPanel5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -844,65 +828,6 @@ namespace OS
             this.FilePath.Size = new System.Drawing.Size(338, 156);
             this.FilePath.TabIndex = 0;
             // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 1);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(200, 100);
-            this.tableLayoutPanel3.TabIndex = 0;
-            // 
-            // tableLayoutPanel4
-            // 
-            this.tableLayoutPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel4.ColumnCount = 3;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel4.Controls.Add(this.button2, 2, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 23);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 2;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(94, 74);
-            this.tableLayoutPanel4.TabIndex = 2;
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(65, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(26, 31);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Run";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(3, 3);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox2.Size = new System.Drawing.Size(94, 157);
-            this.textBox2.TabIndex = 3;
-            // 
             // TapPanel6
             // 
             this.TapPanel6.ColumnCount = 2;
@@ -934,21 +859,24 @@ namespace OS
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.TapPanel7);
-            this.Controls.Add(this.TapPanel6);
+            this.Controls.Add(this.TapPanel8);
             this.Controls.Add(this.Password);
             this.Controls.Add(this.TapsPanel);
             this.Controls.Add(this.lockOn);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.TapName);
-            this.Controls.Add(this.TapPanel2);
+            this.Controls.Add(this.TapPanel7);
+            this.Controls.Add(this.TapPanel6);
             this.Controls.Add(this.Tap1TablePanel);
             this.Controls.Add(this.Table4Tap);
             this.Controls.Add(this.CPUTable);
             this.Controls.Add(this.TapPanel5);
+            this.Controls.Add(this.TapPanel2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.TapsPanel.ResumeLayout(false);
+            this.TapPanel8.ResumeLayout(false);
+            this.TapPanel8.PerformLayout();
             this.Tap1TablePanel.ResumeLayout(false);
             this.Tap1TablePanel.PerformLayout();
             this.TableUnderCode.ResumeLayout(false);
@@ -963,14 +891,10 @@ namespace OS
             this.TapPanel2.ResumeLayout(false);
             this.TapPanel2.PerformLayout();
             this.UnderTapPanel2.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
             this.TapPanel5.ResumeLayout(false);
             this.TapPanel5.PerformLayout();
             this.UnderTap5.ResumeLayout(false);
             this.UnderTap5.PerformLayout();
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1017,10 +941,6 @@ namespace OS
         private System.Windows.Forms.TextBox CPUCode;
         private System.Windows.Forms.TextBox CodeCPUdose;
         public System.Windows.Forms.Button ButtonTap5;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TableLayoutPanel TapPanel5;
         private System.Windows.Forms.TextBox FilePath;
         private System.Windows.Forms.Button PlayMusic;
@@ -1031,13 +951,13 @@ namespace OS
         private System.Windows.Forms.CheckBox LoopMusic;
         public System.Windows.Forms.Button tap7;
         public System.Windows.Forms.Button Tap6;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TableLayoutPanel TapPanel6;
         private System.Windows.Forms.TableLayoutPanel TapPanel7;
         public System.Windows.Forms.Button LockOff;
+        public System.Windows.Forms.Button tap8;
+        private System.Windows.Forms.TableLayoutPanel TapPanel8;
+        private System.Windows.Forms.TextBox Console;
+        private System.Windows.Forms.TableLayoutPanel UnderTap8;
     }
 }
 
