@@ -1,4 +1,67 @@
-﻿if-if,
-Get-using,
-Fun-void,
-Class-class,
+﻿
+System:
+System;;
+                    
+                
+                
+                 Get:
+                    using ;
+                    
+                 Pu:
+                    public ;
+                    
+                 Pr:
+                    private ;
+                    
+                 St:
+                    static ;
+                    
+                 Fun:
+                    void  + code[II];                    
+                 class:
+                    class  + code[II];
+                    
+                 if:
+                    if(;
+                    
+                
+                 int:
+                    int  + code[II];                    
+                 string:
+                    string  + code[II];                    
+                 bool:
+                    bool  + code[II];                    
+                 =:
+                    =;
+                    
+                 ==:
+                    ==;
+                    
+                 !=:
+                    !=;
+                    
+                 <=:
+                    <=;
+                    
+                 >=:
+                    >=;
+                    
+                 <:
+                    <;
+                    
+                 >:
+                    >;
+                    
+
+                
+                
+                 :
+                    {;
+                    
+                 end:
+                    };
+                    
+                 ):
+                    );
+                    
+                    
