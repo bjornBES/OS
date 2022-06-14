@@ -272,18 +272,22 @@ namespace OS
             if (Path.Text == "")
             {
                 path = Application.UserAppDataPath + @"\" + FileName.Text;
-                FileOpen.Text = File.ReadAllText(path);
+                FileOpen.Text = FileMan.ReadText(FileName.Text, true);
             }
             else
             {
                 path = Path + @"\" + FileName.Text;
-                FileOpen.Text = File.ReadAllText(path);
+                FileOpen.Text = FileMan.ReadText(FileName.Text, true);
             }
         }
         private void WAllText_Click(object sender, EventArgs e)
         {
             if (Path.Text == "")
-                FileMan.WAllTexta(FileOpen.Text,FileName.Text, true);
+                if(FileName.Text == "docs.txt")
+                    FileMan.WAllTexta(FileOpen.Text, FileName.Text, true);
+                else
+                    FileMan.WAllTexta(FileOpen.Text, FileName.Text, true);
+
             else
             {
                 FileMan.SetPath(Path.Text);
@@ -310,11 +314,17 @@ namespace OS
             if (Path.Text == "")
             {
                 path = Application.UserAppDataPath + @"\" + FileName.Text;
+                string Codepath = Application.UserAppDataPath + @"\Code" + FileName.Text;
+                string CPUCodepath = Application.UserAppDataPath + @"\Code\CPU" + FileName.Text;
                 DirectoryInfo directoryInfo = new DirectoryInfo(path);
+                DirectoryInfo directoryCode = new DirectoryInfo(Codepath);
+                DirectoryInfo directoryCodeCPU = new DirectoryInfo(CPUCodepath);
                 for (int i = 0; i < directoryInfo.GetFiles().Length; i++)
                 {
                     FindAllFiles.Text = FindAllFiles.Text + directoryInfo.GetFiles()[i].Name + " , ";
                 }
+                FindAllFiles.Text = FindAllFiles.Text + directoryCode.GetFiles()[0].Name + " , ";
+                FindAllFiles.Text = FindAllFiles.Text + directoryCodeCPU.GetFiles()[0].Name + " , ";
             }
             else
             {

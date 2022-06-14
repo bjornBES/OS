@@ -1,4 +1,41 @@
-﻿if-if,
-Get-using,
-Fun-void,
-Class-class,
+﻿System - System; 
+
+Get - using 
+
+Pu - public 
+
+Pr - private 
+
+St - static 
+
+Fun - void 
+
+class - class 
+
+if - if( 
+
+int - int 
+
+string - string 
+
+bool - bool 
+
+= - = 
+
+== - == 
+
+!= - != 
+
+<= - <= 
+
+>= - >= 
+
+< - < 
+
+> - > 
+
+: - { 
+
+end - } 
+
+) - ) 

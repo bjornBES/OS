@@ -4,12 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace OS.code
 {
     public class compilerCodeFill : compiler
     {
-        string path = "C:/Users/bjorn/Source/Repos/OS/code/docs.txt";
+        string path = Application.UserAppDataPath + @"\Code\docs.txt";
         public void Start()
         {
             start();

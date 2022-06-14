@@ -10,12 +10,15 @@ namespace OS.FileMani
     {
         string AppdataPath = Application.UserAppDataPath + @"\";
         string CodeFilePath = Application.UserAppDataPath + @"\" + "Code.BEsC";
+        string DocsFile = Application.UserAppDataPath + @"\Code\docs.txt";
         string AbFilePath = Application.UserAppDataPath + @"\" + "BEsiA.Ab";
         string SetFilePath = Application.UserAppDataPath + @"\" + "settings.Set";
         string InfoFilePath = Application.UserAppDataPath + @"\" + "Info.txt";
         string DataFilePath = Application.UserAppDataPath + @"\private\Password\data.txt";
         string DataDir = Application.UserAppDataPath + @"\private\Password";
-        string CPUDocsFile = Application.UserAppDataPath + @"\CPUdocs.txt";
+        string CodeDir = Application.UserAppDataPath + @"\Code";
+        string CodeCPUDir = Application.UserAppDataPath + @"\Code\CPU";
+        string CPUDocsFile = Application.UserAppDataPath + @"\Code\CPU\CPUdocs.txt";
         public FileMan()
         {
             if (File.Exists(CodeFilePath) != true)
@@ -28,10 +31,16 @@ namespace OS.FileMani
                 File.Create(InfoFilePath);
             if (Directory.Exists(DataDir) != true)
                 Directory.CreateDirectory(DataDir);
+            if (Directory.Exists(CodeDir) != true)
+                Directory.CreateDirectory(CodeDir);
+            if (Directory.Exists(CodeCPUDir) != true)
+                Directory.CreateDirectory(CodeCPUDir);
             if (File.Exists(DataFilePath) != true)
                 File.Create(DataFilePath);
             if (File.Exists(CPUDocsFile) == false)
                 File.Create(CPUDocsFile);
+            if (File.Exists(DocsFile) == false)
+                File.Create(DocsFile);
             Write();
         }
         string infoAbText = "Info about the progarm" +
@@ -44,6 +53,27 @@ namespace OS.FileMani
             "we will not get you any virus form the progarms themselves " +
             "the CEO of BEsIa is BjornBEs and its him who has make this progarm " +
             "";
+        string DocsFileText = "System - System; \n" +
+            "Get - using \n" +
+            "Pu - public \n" +
+            "Pr - private \n" +
+            "St - static \n" +
+            "Fun - void \n" +
+            "class - class \n" +
+            "if - if( \n" +
+            "int - int \n" +
+            "string - string \n" +
+            "bool - bool \n" +
+            "= - = \n" +
+            "== - == \n" +
+            "!= - != \n" +
+            "<= - <= \n" +
+            ">= - >= \n" +
+            "< - < \n" +
+            "> - > \n" +
+            ": - { \n" +
+            "end - } \n" +
+            ") - ) \n";
         string SettingsFileText = "TOS:false";
         string CPUDocsFileText = "if-if, \n Get-using, \n Fun-void, \n Class-class,";
         void Write()
@@ -54,8 +84,10 @@ namespace OS.FileMani
                 File.WriteAllText(InfoFilePath, infoAbText);
             if (File.ReadAllText(SetFilePath) != SettingsFileText)
                 File.WriteAllText(SetFilePath, SettingsFileText);
-            if (File.ReadAllText(CPUDocsFile) != SettingsFileText)
+            if (File.ReadAllText(CPUDocsFile) != CPUDocsFileText)
                 File.WriteAllText(CPUDocsFile, CPUDocsFileText);
+            if (File.ReadAllText(DocsFile) != DocsFileText)
+                File.WriteAllText(DocsFile, DocsFileText);
         }
         string Path;
         /// <summary>
@@ -65,10 +97,27 @@ namespace OS.FileMani
         /// <param name="Appdata">if this is false plase use SetPath()</param>
         public void WAllTexta(string con, string FileName, bool Appdata)
         {
-            if(Appdata == true)
-                File.WriteAllText(AppdataPath + FileName, con);
+            if (FileName == "docs.txt")
+            {
+                if (Appdata == true)
+                    File.WriteAllText(DocsFile, con);
+                else
+                    File.WriteAllText(Path + @"\" + FileName, con);
+            }
+            else if (FileName == "CPUdocs.txt")
+            {
+                if (Appdata == true)
+                    File.WriteAllText(CPUDocsFile, con);
+                else
+                    File.WriteAllText(Path + @"\" + FileName, con);
+            }
             else
-                File.WriteAllText(Path + @"\" + FileName, con);
+            {
+                if (Appdata == true)
+                    File.WriteAllText(AppdataPath + FileName, con);
+                else
+                    File.WriteAllText(Path + @"\" + FileName, con);
+            }
         }
         public void SetPath(string path)
         {
@@ -80,12 +129,31 @@ namespace OS.FileMani
         /// <param name="FileName"></param>
         /// <param name="AppData">if false use SetPath</param>
         /// <returns></returns>
-        public string ReadText(string FileName, bool AppData)
+        public string ReadText(string FileName, bool Appdata)
         {
-            if (AppData == true)
-                return File.ReadAllText(Application.UserAppDataPath + @"\" + FileName);
+            string Re = "";
+            if (FileName == "docs.txt")
+            {
+                if (Appdata == true)
+                    Re = File.ReadAllText(DocsFile);
+                else
+                    Re = File.ReadAllText(DocsFile);
+            }
+            else if (FileName == "CPUdocs.txt")
+            {
+                if (Appdata == true)
+                    Re = File.ReadAllText(CPUDocsFile);
+                else
+                    Re = File.ReadAllText(Path + @"\" + FileName);
+            }
             else
-                return File.ReadAllText(Path + @"\" + FileName);
+            {
+                if (Appdata == true)
+                    Re = File.ReadAllText(Application.UserAppDataPath + @"\" + FileName);
+                else
+                    Re = File.ReadAllText(Path + @"\" + FileName);
+            }
+            return Re;
         }
     }
 }
